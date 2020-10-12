@@ -1,0 +1,363 @@
+#include <windows.h>  // for MS Windows
+#include <GL/glut.h>  // GLUT, include glu.h and gl.h
+#include<math.h>>
+
+# define PI           3.14159265358979323846
+GLfloat j=0.0;
+GLfloat i = 0.0f;
+
+GLfloat position = 0.0f;
+GLfloat speed = 0.1f;
+
+void update(int value) {
+if(position >1.0)
+        position =-1.0f;
+    position += speed;
+	glutPostRedisplay();
+	glutTimerFunc(100, update, 0);
+}
+void display() {
+
+
+
+	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+              glClear(GL_COLOR_BUFFER_BIT);
+
+//sky
+    glBegin(GL_QUADS);
+    glColor3ub(45, 221, 252);
+    glVertex2f(-1.0,1.0);
+    glVertex2f(-1.0,0.4);
+    glVertex2f(1.0,0.4);
+    glVertex2f(1.0,1.0);
+    glEnd();
+//LAND
+    glBegin(GL_QUADS);
+    glColor3ub(21, 156, 11);
+    glVertex2f(-1.0,0.4);
+    glVertex2f(-1.0,-1.0);
+    glVertex2f(1.0,-1.0);
+    glVertex2f(1.0,.4);
+    glEnd();
+
+
+
+
+
+//sun
+
+    int i;
+
+	GLfloat x=-.8f; GLfloat y=.8f; GLfloat radius =.12f;
+	int triangleAmount = 20; //# of triangles used to draw circle
+
+	//GLfloat radius = 0.8f; //radius
+	GLfloat twicePi = 2.0f * PI;
+
+	glBegin(GL_TRIANGLE_FAN);
+   glColor3ub(255,0,0);
+		glVertex2f(x, y); // center of circle
+		for(i = 0; i <= triangleAmount;i++) {
+			glVertex2f(
+                x + (radius * cos(i *  twicePi / triangleAmount)),
+			    y + (radius * sin(i * twicePi / triangleAmount))
+			);
+		}
+	glEnd();
+
+//road
+    glBegin(GL_QUADS);
+    glColor3ub(128,128,128);
+    glVertex2f(-1, -.6);
+    glVertex2f(1, -.6);
+    glVertex2f(1, -.2);
+    glVertex2f(-1, -.2);
+    glEnd();
+
+    //sheed
+
+    glBegin(GL_QUADS);
+    glColor3ub(191, 159, 64);
+    glVertex2f(-1, -.7);
+    glVertex2f(-.8, -.7);
+
+    glVertex2f(-.8, -.62);
+    glVertex2f(-1, -.62);
+
+    glEnd();
+    //
+    glTranslatef(0.2,0,0);
+    glBegin(GL_QUADS);
+    glColor3ub(242,217,217);
+    glVertex2f(-1, -.7);
+    glVertex2f(-.8, -.7);
+    glVertex2f(-.8, -.62);
+    glVertex2f(-1, -.62);
+    glEnd();
+    glLoadIdentity();
+    //
+    glTranslatef(0.4,0,0);
+    glBegin(GL_QUADS);
+    glColor3ub(191, 159, 64);
+    glVertex2f(-1, -.7);
+    glVertex2f(-.8, -.7);
+    glVertex2f(-.8, -.62);
+    glVertex2f(-1, -.62);
+    glEnd();
+    glLoadIdentity();
+
+    glTranslatef(0.6,0,0);
+    glBegin(GL_QUADS);
+    glColor3ub(242,217,217);
+    glVertex2f(-1, -.7);
+    glVertex2f(-.8, -.7);
+    glVertex2f(-.8, -.62);
+    glVertex2f(-1, -.62);
+    glEnd();
+    glLoadIdentity();
+
+    glTranslatef(.8,0,0);
+    glBegin(GL_QUADS);
+    glColor3ub(191, 159, 64);
+    glVertex2f(-1, -.7);
+    glVertex2f(-.8, -.7);
+    glVertex2f(-.8, -.62);
+    glVertex2f(-1, -.62);
+    glEnd();
+    glLoadIdentity();
+
+    glTranslatef(1,0,0);
+    glBegin(GL_QUADS);
+    glColor3ub(242,217,217);
+    glVertex2f(-1, -.7);
+    glVertex2f(-.8, -.7);
+    glVertex2f(-.8, -.62);
+    glVertex2f(-1, -.62);
+    glEnd();
+    glLoadIdentity();
+
+    glTranslatef(1.2,0,0);
+    glBegin(GL_QUADS);
+    glColor3ub(191, 159, 64);
+    glVertex2f(-1, -.7);
+    glVertex2f(-.8, -.7);
+    glVertex2f(-.8, -.62);
+    glVertex2f(-1, -.62);
+    glEnd();
+    glLoadIdentity();
+
+     glTranslatef(1.4,0,0);
+    glBegin(GL_QUADS);
+    glColor3ub(242,217,217);
+    glVertex2f(-1, -.7);
+    glVertex2f(-.8, -.7);
+    glVertex2f(-.8, -.62);
+    glVertex2f(-1, -.62);
+    glEnd();
+    glLoadIdentity();
+
+    glTranslatef(1.6,0,0);
+    glBegin(GL_QUADS);
+    glColor3ub(191, 159, 64);
+    glVertex2f(-1, -.7);
+    glVertex2f(-.8, -.7);
+    glVertex2f(-.8, -.62);
+    glVertex2f(-1, -.62);
+    glEnd();
+    glLoadIdentity();
+
+
+    glTranslatef(1.8,0,0);
+    glBegin(GL_QUADS);
+    glColor3ub(242,217,217);
+    glVertex2f(-1, -.7);
+    glVertex2f(-.8, -.7);
+    glVertex2f(-.8, -.62);
+    glVertex2f(-1, -.62);
+    glEnd();
+    glLoadIdentity();
+
+   //road divider
+
+    glBegin(GL_QUADS);
+    glColor3ub(242,217,217);
+    glVertex2f(-1, -.41);
+    glVertex2f(-.7, -.41);
+    glVertex2f(-.7, -.38);
+    glVertex2f(-1, -.38);
+    glEnd();
+
+    glTranslatef(.6,0,0);
+    glBegin(GL_QUADS);
+    glColor3ub(242,217,217);
+    glVertex2f(-1, -.41);
+    glVertex2f(-.7, -.41);
+    glVertex2f(-.7, -.38);
+    glVertex2f(-1, -.38);
+    glEnd();
+    glLoadIdentity();
+
+    glTranslatef(1.2,0,0);
+    glBegin(GL_QUADS);
+    glColor3ub(242,217,217);
+    glVertex2f(-1, -.41);
+    glVertex2f(-.7, -.41);
+    glVertex2f(-.7, -.38);
+    glVertex2f(-1, -.38);
+    glEnd();
+    glLoadIdentity();
+
+
+    glTranslatef(1.8,0,0);
+    glBegin(GL_QUADS);
+    glColor3ub(242,217,217);
+    glVertex2f(-1, -.41);
+    glVertex2f(-.7, -.41);
+    glVertex2f(-.7, -.38);
+    glVertex2f(-1, -.38);
+    glEnd();
+    glLoadIdentity();
+
+
+
+
+
+    //car1
+    glPushMatrix();
+    glTranslatef(position,0.0f, 0.0f);
+
+    glBegin(GL_POLYGON);
+    glColor3ub(255,0,0);
+    glVertex2f(-.6, -.5);
+    glVertex2f(-.1, -.5);
+    glVertex2f(-.12, -.45);
+    glVertex2f(-.18, -.45);
+    glVertex2f(-.3, -.35);
+    glVertex2f(-.5, -.35);
+    glVertex2f(-.49, -.45);
+    glVertex2f(-.59, -.45);
+    glEnd();
+
+
+    glBegin(GL_QUADS);
+    glColor3ub(0,0,0);
+    glVertex2f(-.25, -.45);
+    glVertex2f(-.31, -.38);
+    glVertex2f(-.49, -.38);
+    glVertex2f(-.54, -.46);
+    glEnd();
+
+
+
+
+
+//////CAR  chaka
+
+   x=-.49; y=-.52f;radius =.05f;
+
+	glBegin(GL_TRIANGLE_FAN);
+	    glColor3ub(0,0,0);
+		glVertex2f(x, y); // center of circle
+		for(i = 0; i <= triangleAmount;i++) {
+			glVertex2f(
+                x + (radius * cos(i *  twicePi / triangleAmount)),
+			    y + (radius * sin(i * twicePi / triangleAmount))
+			);
+		}
+	glEnd();
+
+
+   //2nd chaka
+
+
+              	x=-.28f; y=-.52f;radius =.05f;
+
+
+	glBegin(GL_TRIANGLE_FAN);
+	    glColor3ub(0,0,0);
+		glVertex2f(x, y); // center of circle
+		for(i = 0; i <= triangleAmount;i++) {
+			glVertex2f(
+                x + (radius * cos(i *  twicePi / triangleAmount)),
+			    y + (radius * sin(i * twicePi / triangleAmount))
+			);
+		}
+	glEnd();
+
+
+
+
+   //Car2
+    glTranslatef(.77,.22,0);
+    glBegin(GL_POLYGON);
+    glColor3ub(255,0,0);
+    glVertex2f(-.6, -.5);
+    glVertex2f(-.1, -.5);
+    glVertex2f(-.12, -.45);
+    glVertex2f(-.18, -.45);
+    glVertex2f(-.3, -.35);
+    glVertex2f(-.5, -.35);
+    glVertex2f(-.49, -.45);
+    glVertex2f(-.59, -.45);
+    glEnd();
+
+
+    glBegin(GL_QUADS);
+    glColor3ub(0,0,0);
+    glVertex2f(-.25, -.45);
+    glVertex2f(-.31, -.38);
+    glVertex2f(-.49, -.38);
+    glVertex2f(-.54, -.46);
+    glEnd();
+
+
+    x=-.49; y=-.52f;radius =.05f;
+
+	glBegin(GL_TRIANGLE_FAN);
+	    glColor3ub(0,0,0);
+		glVertex2f(x, y); // center of circle
+		for(i = 0; i <= triangleAmount;i++) {
+			glVertex2f(
+                x + (radius * cos(i *  twicePi / triangleAmount)),
+			    y + (radius * sin(i * twicePi / triangleAmount))
+			);
+		}
+	glEnd();
+
+
+   //2nd chaka
+
+
+              	x=-.28f; y=-.52f;radius =.05f;
+
+
+	glBegin(GL_TRIANGLE_FAN);
+	    glColor3ub(0,0,0);
+		glVertex2f(x, y); // center of circle
+		for(i = 0; i <= triangleAmount;i++) {
+			glVertex2f(
+                x + (radius * cos(i *  twicePi / triangleAmount)),
+			    y + (radius * sin(i * twicePi / triangleAmount))
+			);
+		}
+	glEnd();
+	glPopMatrix();
+
+glLoadIdentity();
+
+
+
+ glFlush();
+}
+
+int main(int argc, char** argv) {
+	glutInit(&argc, argv);
+	glutCreateWindow("Test");
+    glutInitWindowSize(990,880);
+    glutInitWindowPosition(100,50);
+	glutDisplayFunc(display);
+	   glutDisplayFunc(display);
+   glutTimerFunc(100, update, 0);
+	glutMainLoop();
+	return 0;
+}

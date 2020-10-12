@@ -1,0 +1,23 @@
+Abstract— Traffic management system is considered as one of the
+major dimensions of a smart city. With the rapid growth of
+population and urban mobility in metropolitan cities, traffic
+congestion is often seen on roads. To tackle various issues for
+managing traffic on roads and to help authorities in proper
+planning, a smart traffic management system using the Internet of
+Things (IoT) is proposed in this paper. A hybrid approach
+(combination of centralized and decentralized) is used to optimize
+traffic flow on roads and an algorithm is devised to manage
+various traffic situations efficiently. For this purpose, the system
+takes traffic density as input from a) cameras b) and sensors, then
+manages traffic signals. Another algorithm based on Artificial
+Intelligence is used to predict the traffic density for future to
+minimize the traffic congestion. Besides this, RFIDs are also used
+to prioritize the emergency vehicles such as ambulances and fire
+brigade vehicles during a traffic jam. In case of fire on the road,
+Smoke sensors are also part of this system to detect this situation.
+To demonstrate the effectiveness of the proposed traffic
+management system, a prototype is developed which not only
+optimizes the flow of traffic but also connects nearby rescue
+departments with a centralized server. Moreover, it also extracts
+useful information presented in graphical formats that may help
+the authorities in future road planning.

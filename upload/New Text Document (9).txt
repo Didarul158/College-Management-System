@@ -1,0 +1,67 @@
+<?php
+	session_start();
+	if(!isset($_SESSION['p_name'])){  
+		header("location: login.php");
+	}
+	//print_r($_SESSION['user']);
+
+	require_once('../service/functions.php');
+	//require('db.php');
+	$result = getParent();
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Parent Profiles</title>
+</head>
+<body>
+	<center>
+
+		<a href="parent_home.php"> Back</a> | 
+		<a href="logout.php"> logout</a> 
+		<br/>
+		<?php
+		
+		     if(isset($_REQUEST["deleted"])){
+				 echo "Data has been deleted";
+			 }
+		?>
+		<br/>
+		
+		<table border=1>
+			<tr>
+				
+				
+				<td>Parent Name</td>
+				<td>Gender</td>
+				<td>Email</td>
+				<td>DOB</td>
+				<td>Blood Group</td>
+				<td>Profile picture</td>
+				<td>Type</td>
+				<td>Action</td>
+			</tr>
+
+	<?php	while($row = mysqli_fetch_assoc($result)){ ?>
+		
+		<tr>
+			<td><?=$_SESSION['user']['p_name']?></td>
+			<td> <?=$_SESSION['user']['gender']?></td>
+			<td><?=$_SESSION['user']['email']?></td>
+			<td><?=$_SESSION['user']['dob']?></td>
+			<td><?=$_SESSION['user']['bldgroup']?></td>
+			<td><img width="60px" src="../upload/<?=$_SESSION['user']['photo']?>"></td>
+			<td><?=$_SESSION['user']['type']?></td>
+			<td>
+			<a href="parent_edit.php?id=<?=$row['p_id']?>">Edit</a> |
+			<a href="parent_delete.php?s_id=<?=$row['p_id']?>">Delete</a> 
+			</td>
+		</tr>
+	<?php } ?>
+
+	</table>
+</center>
+</body>
+</html>
+-->

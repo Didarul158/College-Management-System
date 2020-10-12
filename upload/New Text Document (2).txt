@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+  var x = document.forms["myForm"]["fname"].value;
+  var y = document.forms["myForm"]["email"].value;
+  var z = document.forms["myForm"]["age"].value;
+  var p = document.forms["myForm"]["contact"].value;
+  if (x == "" ) {
+    alert("Name must be filled out");
+    return false;
+  }
+ else if (y == "" ) {
+    alert("Email must be filled out");
+    return false;
+  }
+   else if (z == "" ) {
+    alert("Age must be filled out");
+    return false;
+  }
+   else if (p == "" ) {
+    alert("Contact must be filled out");
+    return false;
+  }
+}
+</script>
+</head>
+<body>
+<div class="container">
+<div class="main">
+<form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+  <label>Full Name</label>
+  <input type="text" name="fname"><br>
+  <label> Email :</label>
+  <input type="email" name="email"><br>
+  <label>Gender :</label>
+	<input id="male" name="gender" type="radio" value="Male">
+	<label>Male</label>
+	<input id="female" name="gender" type="radio" value="Female">
+	<label>Female</label>
+	  </br>
+  <label>Age :</label>
+  <input type="number" name="age"><br>
+  <label>Contact No :</label>
+  <input type="number" name="contact"><br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+</div>
+</body>
+</html>

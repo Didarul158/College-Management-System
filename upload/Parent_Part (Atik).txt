@@ -1,0 +1,24 @@
+1. view Students information from student.
+
+2. view result from teacher.
+
+3. view Class routine from admin.
+
+4. view attendence from teacher.
+
+5. view Exam schedule from admin.
+
+6. Financial Info from Admin.
+
+7. Take Complaint from Teacher.
+
+8. view notice from Teacher.
+
+9. view notes from Teacher.
+
+10. subject information from admin.
+
+11. perticipate pool from Admin.
+
+
+
